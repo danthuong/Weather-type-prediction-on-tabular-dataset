@@ -1,0 +1,19 @@
+{
+  "label_col": "Weather Type",
+  "categorical": [
+    "Cloud Cover",
+    "Season",
+    "Location"
+  ],
+  "numeric": [
+    "Atmospheric Pressure",
+    "Humidity",
+    "Precipitation (%)",
+    "Temperature",
+    "UV Index"
+  ],
+  "log1p": [
+    "Wind Speed",
+    "Visibility (km)"
+  ]
+}

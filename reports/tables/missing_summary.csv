@@ -1,0 +1,12 @@
+column,missing,missing_rate
+Temperature,0,0.0
+Humidity,0,0.0
+Wind Speed,0,0.0
+Precipitation (%),0,0.0
+Cloud Cover,0,0.0
+Atmospheric Pressure,0,0.0
+UV Index,0,0.0
+Season,0,0.0
+Visibility (km),0,0.0
+Location,0,0.0
+Weather Type,0,0.0

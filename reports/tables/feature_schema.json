@@ -1,0 +1,17 @@
+{
+  "n_rows": 13200,
+  "n_cols": 11,
+  "columns": [
+    "Temperature",
+    "Humidity",
+    "Wind Speed",
+    "Precipitation (%)",
+    "Cloud Cover",
+    "Atmospheric Pressure",
+    "UV Index",
+    "Season",
+    "Visibility (km)",
+    "Location",
+    "Weather Type"
+  ]
+}

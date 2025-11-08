@@ -1,0 +1,8 @@
+{
+  "model": "svm",
+  "config_id": "C10_gscale",
+  "params": {
+    "C": 10.0,
+    "gamma": "scale"
+  }
+}
