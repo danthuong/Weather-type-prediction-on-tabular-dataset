@@ -1,5 +1,3 @@
-Dưới đây là phiên bản được viết lại, chuyên nghiệp hơn, trình bày rõ ràng và bổ sung thêm các hướng dẫn cần thiết để chạy dự án.
-
 ---
 
 # 🌦️ Phân Loại Thời Tiết: SVM vs. XGBoost
