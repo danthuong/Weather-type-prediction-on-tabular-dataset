@@ -68,7 +68,7 @@ Weather-Type-Prediction/
 1.  **Clone dự án:**
     ```bash
     git clone https://github.com/danthuong/Weather-type-prediction-on-tabular-dataset.git
-    cd Weather-Type-Prediction
+    cd Weather-type-prediction-on-tabular-dataset
     ```
 
 2.  **Cài đặt môi trường:**
