@@ -1,0 +1,7 @@
+{
+  "model": "logreg",
+  "config_id": "C1.0",
+  "params": {
+    "C": 1.0
+  }
+}

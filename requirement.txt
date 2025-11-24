@@ -1,0 +1,20 @@
+# --- Core Data Science Libraries ---
+numpy               # Xử lý mảng và tính toán số học
+pandas              # Đọc dữ liệu (csv), xử lý và thao tác dataframe
+
+# --- Visualization ---
+matplotlib          # Thư viện vẽ biểu đồ cơ bản
+seaborn             # Vẽ biểu đồ thống kê đẹp hơn (heatmap, distribution plot...)
+
+# --- Machine Learning ---
+scikit-learn        # Thư viện chính cho SVM, tiền xử lý, chia tập dữ liệu và đánh giá
+xgboost             # Thư viện cho thuật toán XGBoost
+
+# --- Development & Environment ---
+jupyter             # Để chạy Jupyter Notebooks
+notebook            # Giao diện Notebook
+ipykernel           # Kernel để chạy Python trong Notebook
+
+# --- Utilities (Optional) ---
+joblib              # Để lưu (save) và tải (load) mô hình đã huấn luyện
+kaggle              # (Tùy chọn) Nếu muốn tải dataset trực tiếp từ Kaggle qua API

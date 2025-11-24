@@ -1,0 +1,4 @@
+model,config_id,params_json,macro_f1_val,accuracy_val
+xgb,C,"{""n_estimators"": 500, ""max_depth"": 4, ""learning_rate"": 0.05, ""subsample"": 0.8, ""colsample_bytree"": 1.0}",0.9161408313547744,0.9159090909090909
+svm,C10_gscale,"{""C"": 10.0, ""gamma"": ""scale""}",0.9077517655151701,0.9075757575757576
+logreg,C1.0,"{""C"": 1.0}",0.8706004756228449,0.8704545454545455

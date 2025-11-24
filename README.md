@@ -1,88 +1,134 @@
-# Weather-type-prediction-on-tabular-dataset
+Dưới đây là phiên bản được viết lại, chuyên nghiệp hơn, trình bày rõ ràng và bổ sung thêm các hướng dẫn cần thiết để chạy dự án.
 
-Đây là dự án học máy nhằm mục đích phân loại và dự đoán loại hình thời tiết dựa trên một bộ dữ liệu dạng bảng. Dự án tập trung vào việc áp dụng và so sánh hiệu suất của hai thuật toán mạnh mẽ: **Support Vector Machine (SVM)** và **XGBoost**.
-
-## Mục lục
-1. [Mục tiêu dự án](#mục-tiêu-dự-án)
-2. [Mô tả dữ liệu](#mô-tả-dữ-liệu)
-3. [Cấu trúc thư mục](#cấu-trúc-thư-mục)
-4. [Phân công nhiệm vụ](#phân-công-nhiệm-vụ)
-5. [Yêu cầu Báo cáo (Report)](#yêu-cầu-báo-cáo-report)
-6. [Deadline](#deadline)
-
-## Mục tiêu dự án
-- **Tiền xử lý và chuẩn bị dữ liệu:** Làm sạch, xử lý các giá trị thiếu, mã hóa các biến categorical, và chuẩn hóa dữ liệu để phù hợp với các mô hình.
-- **Xây dựng mô hình SVM:** Áp dụng thuật toán Support Vector Machine để phân loại thời tiết. Tinh chỉnh các tham số (hyperparameter tuning) để đạt hiệu suất tốt nhất.
-- **Xây dựng mô hình XGBoost:** Áp dụng thuật toán Extreme Gradient Boosting, một thuật toán mạnh mẽ dựa trên cây quyết định, để phân loại thời tiết và tinh chỉnh tham số.
-- **Đánh giá hiệu suất:** Sử dụng các độ đo (metrics) phổ biến như Accuracy, Precision, Recall, F1-score và Confusion Matrix để đánh giá hiệu suất của cả hai mô hình.
-- **So sánh và kết luận:** So sánh ưu, nhược điểm và kết quả của hai phương pháp trên bộ dữ liệu này.
-- **Viết báo cáo chi tiết:** Mỗi thành viên sẽ viết một báo cáo chi tiết về thuật toán mình thực hiện, giải thích cặn kẽ từ lý thuyết đến thực hành.
-
-## Mô tả dữ liệu
-Dự án sử dụng bộ dữ liệu `[Weather Type Classification]`.
-- **Nguồn:** `[https://www.kaggle.com/datasets/nikhil7280/weather-type-classification]`
-
-## Cấu trúc thư mục
-Dự án được tổ chức theo cấu trúc gợi ý như sau để dễ dàng quản lý và cộng tác:
-```
-/
-├── data/
-│   ├── raw/                  # Chứa dữ liệu thô ban đầu
-│   │   └── weather_data.csv
-│   └── processed/            # Chứa dữ liệu đã qua xử lý
-│       └── cleaned_data.csv
-├── notebooks/                # Chứa các file Jupyter Notebook để khám phá, thử nghiệm
-│   ├── 1_data_exploration.ipynb
-│   ├── 2_svm_model.ipynb
-│   └── 3_xgboost_model.ipynb
-├── src/                      # Chứa code Python hoàn chỉnh
-│   ├── preprocess.py         # Module tiền xử lý dữ liệu
-│   ├── train_svm.py          # Script huấn luyện mô hình SVM
-│   ├── train_xgboost.py      # Script huấn luyện mô hình XGBoost
-|   ├── utils.py
-│   └── evaluate.py           # Script đánh giá mô hình
-├── requirements.txt          # Liệt kê các thư viện cần thiết
-└── README.md
-```
-
-## Phân công nhiệm vụ
-
-| Nhiệm vụ | Người thực hiện | Mô tả công việc |
-|---|---|---|
-| **Task 1: SVM Model** | `[Dũng, Chiến]` | - Phân tích các yêu cầu tiền xử lý dữ liệu riêng cho SVM (ví dụ: scaling).<br>- Xây dựng, huấn luyện và tinh chỉnh mô hình SVM.<br>- Viết báo cáo chi tiết cho thuật toán SVM. |
-| **Task 2: XGBoost Model** | `[Dương, Nhi]` | - Phân tích các yêu cầu tiền xử lý dữ liệu cho XGBoost (ví dụ: xử lý categorical).<br>- Xây dựng, huấn luyện và tinh chỉnh mô hình XGBoost.<br>- Viết báo cáo chi tiết cho thuật toán XGBoost. |
-| **Task chung: Đánh giá** | `Làm chung` | - Thống nhất các độ đo (metrics) để đánh giá.<br>- Viết script `evaluate.py` chung.<br>- Cùng nhau thực hiện so sánh, rút ra kết luận cuối cùng về hiệu suất hai mô hình. |
-
-
-## Yêu cầu Báo cáo (Report)
-Mỗi báo cáo cần được viết **cực kỳ chi tiết, rõ ràng**, với mục tiêu giúp một người mới có thể đọc và hiểu được toàn bộ quá trình. Nội dung bắt buộc bao gồm:
-
-1.  **Giới thiệu về thuật toán:**
-    -   Trình bày khái niệm cốt lõi của thuật toán (SVM là gì? XGBoost là gì?).
-    -   Giải thích các khái niệm quan trọng (ví dụ: với SVM là support vectors, kernel trick, margin; với XGBoost là gradient boosting, decision tree, regularization).
-    -   Nêu ưu và nhược điểm lý thuyết của thuật toán.
-
-2.  **Tiền xử lý dữ liệu (Data Preprocessing):**
-    -   Giải thích tại sao thuật toán này cần các bước tiền xử lý dữ liệu cụ thể.
-        -   *Ví dụ cho SVM:* "SVM rất nhạy cảm với sự khác biệt về thang đo của các features, do đó việc chuẩn hóa (Scaling) dữ liệu như StandardScaler là bắt buộc để đảm bảo các feature có đóng góp công bằng vào việc xác định siêu phẳng phân tách..."
-        -   *Ví dụ cho XGBoost:* "XGBoost có thể xử lý trực tiếp các giá trị thiếu, tuy nhiên để đảm bảo tính nhất quán, chúng ta đã... Thuật toán cũng yêu cầu các biến categorical phải được mã hóa thành số..."
-    -   Liệt kê các bước đã thực hiện và giải thích lý do.
-
-3.  **Xây dựng mô hình:**
-    -   Trình bày quá trình huấn luyện mô hình.
-    -   Giải thích ý nghĩa của các tham số (hyperparameters) quan trọng đã được tinh chỉnh (ví dụ: `C`, `gamma`, `kernel` cho SVM; `n_estimators`, `max_depth`, `learning_rate` cho XGBoost).
-    -   Mô tả phương pháp đã dùng để tìm tham số tốt nhất (ví dụ: GridSearch, RandomizedSearch).
-
-4.  **Kết quả và phân tích:**
-    -   Trình bày kết quả đánh giá (accuracy, confusion matrix, ...).
-    -   Phân tích sâu về kết quả: Mô hình hoạt động tốt ở điểm nào, yếu ở điểm nào? Tại sao?
-
-5.  **Kết luận:**
-    -   Tóm tắt lại quá trình và kết quả đạt được cho thuật toán của mình.
-
-## Deadline
-**Deadline hoàn thành toàn bộ dự án và báo cáo: `30/10/2025`**
-
-# ⚠️ Chú ý
-  - Mỗi Task tạo 1 branch riêng và làm việc trên branch đó, chừng nào làm ổn hết rồi thì mới merge vô main branch
 ---
+
+# 🌦️ Phân Loại Thời Tiết: SVM vs. XGBoost
+
+> **Weather Type Classification on Tabular Dataset**
+
+Dự án này tập trung vào việc xây dựng, tối ưu hóa và so sánh hiệu suất của hai thuật toán học máy phổ biến là **Support Vector Machine (SVM)** và **XGBoost** (Extreme Gradient Boosting) trong bài toán phân loại thời tiết dựa trên dữ liệu dạng bảng.
+
+---
+
+## 📑 Mục Lục
+1. [Giới thiệu dự án](#-giới-thiệu-dự-án)
+2. [Dữ liệu](#-dữ-liệu)
+3. [Cấu trúc dự án](#-cấu-trúc-dự-án)
+4. [Cài đặt và Sử dụng](#-cài-đặt-và-sử-dụng)
+5. [Phân công nhiệm vụ](#-phân-công-nhiệm-vụ)
+6. [Yêu cầu báo cáo](#-yêu-cầu-báo-cáo)
+7. [Lịch trình](#-lịch-trình)
+
+---
+
+## 🚀 Giới thiệu dự án
+
+Mục tiêu chính của dự án là giải quyết bài toán phân loại đa lớp (Multi-class classification) để dự đoán các loại hình thời tiết. Quy trình thực hiện bao gồm:
+
+1.  **Tiền xử lý dữ liệu (Data Preprocessing):** Làm sạch dữ liệu, xử lý missing values, mã hóa (Encoding) và chuẩn hóa (Scaling).
+2.  **Mô hình hóa (Modeling):**
+    *   **SVM:** Tập trung vào việc xây dựng siêu phẳng phân tách tối ưu, yêu cầu kỹ lưỡng về scaling dữ liệu.
+    *   **XGBoost:** Sử dụng kỹ thuật boosting trên cây quyết định, tập trung vào tốc độ và hiệu suất cao.
+3.  **Tối ưu tham số (Hyperparameter Tuning):** Sử dụng GridSearch hoặc RandomizedSearch để tìm bộ tham số tốt nhất.
+4.  **Đánh giá & So sánh:** Phân tích kết quả dựa trên Accuracy, F1-Score, Precision, Recall và Confusion Matrix.
+
+---
+
+## 📊 Dữ liệu
+
+Dự án sử dụng bộ dữ liệu **Weather Type Classification** từ Kaggle.
+*   **Nguồn dữ liệu:** [Kaggle Dataset Link](https://www.kaggle.com/datasets/nikhil7280/weather-type-classification)
+*   **Loại dữ liệu:** Dạng bảng (Tabular data).
+*   **Target:** Các loại hình thời tiết (Ví dụ: Sunny, Rainy, Cloudy, Snowy...).
+
+---
+
+## 📂 Cấu trúc dự án
+
+```bash
+Weather-Type-Prediction/
+├── data/
+│   └── raw/                    # Chứa dữ liệu thô tải về từ Kaggle (weather_data.csv)
+├── notebooks/                  # Jupyter Notebooks cho từng giai đoạn
+│   ├── 1_data_exploration.ipynb    # Khám phá dữ liệu sơ bộ
+│   ├── 01_EDA_Preprocessing.ipynb  # Phân tích sâu và tiền xử lý
+│   └── 02_ModelingSelection.ipynb  # Huấn luyện, tinh chỉnh và so sánh mô hình
+├── src/                        # Mã nguồn Python (để tái sử dụng)
+│   ├── preprocess.py           # Các hàm xử lý, làm sạch dữ liệu
+│   └── utils.py                # Các hàm hỗ trợ (đánh giá, vẽ biểu đồ...)
+├── requirements.txt            # Danh sách thư viện cần thiết
+└── README.md                   # Tài liệu dự án
+```
+
+---
+
+## 🛠 Cài đặt và Sử dụng
+
+1.  **Clone dự án:**
+    ```bash
+    git clone <link-repo-cua-ban>
+    cd Weather-Type-Prediction
+    ```
+
+2.  **Cài đặt môi trường:**
+    Khuyên dùng môi trường ảo (Virtual Environment):
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # Trên Windows: venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
+
+3.  **Chạy Notebook:**
+    Mở các file trong thư mục `notebooks/` theo thứ tự đã đánh số để theo dõi quy trình.
+
+---
+
+## 👥 Phân công nhiệm vụ
+
+| Task | Thành viên | Mô tả công việc chi tiết |
+| :--- | :--- | :--- |
+| **Task 1: SVM Model** | `[Dũng, Chiến]` | - Phân tích đặc thù dữ liệu cho SVM + LogisticRegression.<br>- Huấn luyện và Tuning SVM.<br>- Viết báo cáo chuyên sâu về SVM. |
+| **Task 2: XGBoost Model** | `[Dương, Nhi]` | - Phân tích đặc thù dữ liệu cho XGBoost.<br>- Huấn luyện và Tuning XGBoost.<br>- Viết báo cáo chuyên sâu về XGBoost. |
+| **Task 3: Đánh giá chung** | `Toàn team` | - Thống nhất metrics đánh giá.<br>- Viết script so sánh.<br>- Tổng hợp kết quả và viết kết luận chung. |
+
+---
+
+## 📝 Yêu cầu báo cáo
+
+Báo cáo cần được trình bày **chi tiết, mang tính học thuật và giải thích rõ ràng** để người đọc (kể cả người mới) có thể hiểu được. Cấu trúc bắt buộc:
+
+### 1. Giới thiệu thuật toán
+*   **Khái niệm cốt lõi:** Định nghĩa SVM/XGBoost là gì?
+*   **Cơ chế hoạt động:**
+    *   *SVM:* Support vectors, Margin, Kernel Trick ($C$, $\gamma$...).
+    *   *XGBoost:* Gradient Boosting, Decision Trees, Regularization, Loss function.
+*   **Ưu/Nhược điểm lý thuyết:** Khi nào nên dùng?
+
+### 2. Tiền xử lý dữ liệu (Data Preprocessing)
+*   **Lý do thực hiện:** Tại sao thuật toán này lại cần bước xử lý đó?
+    *   *Ví dụ SVM:* Tại sao phải dùng StandardScaler/MinMaxScaler?
+    *   *Ví dụ XGBoost:* Xử lý biến category (One-Hot vs Label Encoding) ảnh hưởng thế nào?
+*   **Quy trình:** Liệt kê các bước làm sạch và biến đổi dữ liệu đã áp dụng.
+
+### 3. Xây dựng mô hình (Modeling)
+*   **Quá trình huấn luyện:** Các bước train model.
+*   **Hyperparameters:** Giải thích ý nghĩa các tham số quan trọng đã tinh chỉnh.
+*   **Phương pháp Tuning:** GridSearch hay RandomizedSearch? Tại sao chọn không gian tham số đó?
+
+### 4. Kết quả & Phân tích (Evaluation)
+*   **Kết quả định lượng:** Bảng số liệu (Accuracy, F1-Score...).
+*   **Kết quả định tính:** Confusion Matrix, ROC Curve.
+*   **Phân tích sâu:** Model nhận diện tốt lớp nào? Kém lớp nào? Tại sao (do dữ liệu mất cân bằng hay do đặc trưng)?
+
+### 5. Kết luận
+*   Tổng kết lại hiệu quả của thuật toán đối với bộ dữ liệu này.
+
+---
+
+## 📅 Lịch trình & Quy tắc
+
+> **⚠️ QUAN TRỌNG:**
+> *   **Branching:** Mỗi Task tạo một branch riêng (vd: `feature/svm-model`, `feature/xgboost-model`). Chỉ merge vào `main` khi code đã chạy ổn định.
+> *   **Commit:** Viết commit message rõ ràng.
+
+*   **Deadline hoàn thành:** `23/11/2025`
