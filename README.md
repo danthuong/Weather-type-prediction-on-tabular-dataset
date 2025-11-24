@@ -6,7 +6,7 @@ Dưới đây là phiên bản được viết lại, chuyên nghiệp hơn, tr�
 
 > **Weather Type Classification on Tabular Dataset**
 
-Dự án này tập trung vào việc xây dựng, tối ưu hóa và so sánh hiệu suất của hai thuật toán học máy phổ biến là **Support Vector Machine (SVM)** và **XGBoost** (Extreme Gradient Boosting) trong bài toán phân loại thời tiết dựa trên dữ liệu dạng bảng.
+Dự án này tập trung vào việc xây dựng, tối ưu hóa và so sánh hiệu suất của hai thuật toán học máy phổ biến là **Logisitic Regression**, **Support Vector Machine (SVM)** và **XGBoost** (Extreme Gradient Boosting) trong bài toán phân loại thời tiết dựa trên dữ liệu dạng bảng.
 
 ---
 
@@ -27,6 +27,7 @@ Mục tiêu chính của dự án là giải quyết bài toán phân loại đa
 
 1.  **Tiền xử lý dữ liệu (Data Preprocessing):** Làm sạch dữ liệu, xử lý missing values, mã hóa (Encoding) và chuẩn hóa (Scaling).
 2.  **Mô hình hóa (Modeling):**
+    *   **Logistic Regression:** Mô hình tuyến tính sử dụng hàm Softmax để phân loại đa lớp, yêu cầu chuẩn hóa dữ liệu và thường được dùng làm baseline do tính đơn giản và khả năng diễn giải tốt.
     *   **SVM:** Tập trung vào việc xây dựng siêu phẳng phân tách tối ưu, yêu cầu kỹ lưỡng về scaling dữ liệu.
     *   **XGBoost:** Sử dụng kỹ thuật boosting trên cây quyết định, tập trung vào tốc độ và hiệu suất cao.
 3.  **Tối ưu tham số (Hyperparameter Tuning):** Sử dụng GridSearch hoặc RandomizedSearch để tìm bộ tham số tốt nhất.
@@ -100,6 +101,7 @@ Báo cáo cần được trình bày **chi tiết, mang tính học thuật và 
 ### 1. Giới thiệu thuật toán
 *   **Khái niệm cốt lõi:** Định nghĩa SVM/XGBoost là gì?
 *   **Cơ chế hoạt động:**
+    *   *Logistic Regression:* Linear decision boundary, Sigmoid/Softmax, Cross-Entropy loss, L2 regularization.
     *   *SVM:* Support vectors, Margin, Kernel Trick ($C$, $\gamma$...).
     *   *XGBoost:* Gradient Boosting, Decision Trees, Regularization, Loss function.
 *   **Ưu/Nhược điểm lý thuyết:** Khi nào nên dùng?
