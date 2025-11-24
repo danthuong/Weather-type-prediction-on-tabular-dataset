@@ -66,7 +66,7 @@ Weather-Type-Prediction/
 
 1.  **Clone dự án:**
     ```bash
-    git clone <link-repo-cua-ban>
+    git clone https://github.com/danthuong/Weather-type-prediction-on-tabular-dataset.git
     cd Weather-Type-Prediction
     ```
 
@@ -125,10 +125,5 @@ Báo cáo cần được trình bày **chi tiết, mang tính học thuật và 
 
 ---
 
-## 📅 Lịch trình & Quy tắc
-
-> **⚠️ QUAN TRỌNG:**
-> *   **Branching:** Mỗi Task tạo một branch riêng (vd: `feature/svm-model`, `feature/xgboost-model`). Chỉ merge vào `main` khi code đã chạy ổn định.
-> *   **Commit:** Viết commit message rõ ràng.
-
+## 📅 Deadline
 *   **Deadline hoàn thành:** `23/11/2025`
